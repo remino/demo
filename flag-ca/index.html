@@ -1,0 +1,13 @@
+---
+title: 🇨🇦 Canada Flag
+---
+
+<!-- prettier-ignore -->
+{% assign res = 256 %}
+<div class="flag" style="--res: {{ res }}; --time: 2s;">
+	{% for cal in (1..res) %}
+	<div class="flag__column" style="--col: {{ cal }}">
+		<div class="flag__strip"></div>
+	</div>
+	{% endfor %}
+</div>

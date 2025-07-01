@@ -1,0 +1,53 @@
+---
+---
+@keyframes fly
+	from
+		transform: translateY(-2.5%)
+	to
+		transform: translateY(2.5%)
+
+body
+	align-items: center
+	background: #111
+	box-sizing: border-box
+	display: flex
+	flex-flow: row nowrap
+	justify-content: center
+
+body, html
+	margin: 0
+	padding: 0
+	height: 100%
+	width: 100%
+
+.flag
+	--width: 75vmin
+	align-items: stretch
+	aspect-ratio: 1.5 / 1
+	display: flex
+	flex-flow: row nowrap
+	height: auto
+	justify-content: stretch
+	width: var(--width)
+
+	&__column
+		--delay: calc((var(--time) * -1) + (var(--time) / var(--res)) * (var(--col) - 1))
+		align-items: stretch
+		animation: fly 1s var(--delay) ease-in-out alternate infinite
+		display: flex
+		flex: 1 0
+		flex-flow: column nowrap
+		justify-content: stretch	
+
+	&__strip
+		flex: 1 0
+
+		&:nth-child(1),
+		&:nth-child(5)
+			background: #5BCEFA
+		&:nth-child(2),
+		&:nth-child(4)
+			background: #F5A9B8
+		&:nth-child(3)
+			background: #fff
+

@@ -1,0 +1,50 @@
+---
+---
+@keyframes fly
+	from
+		transform: translateY(-5%)
+	to
+		transform: translateY(5%)
+
+body
+	align-items: center
+	background: #111
+	box-sizing: border-box
+	display: flex
+	flex-flow: row nowrap
+	justify-content: center
+
+body, html
+	margin: 0
+	padding: 0
+	height: 100%
+	width: 100%
+
+.flag
+	--width: 75vmin
+	align-items: stretch
+	aspect-ratio: 2 / 1
+	display: flex
+	flex-flow: row nowrap
+	height: auto
+	justify-content: stretch
+	width: var(--width)
+
+	&__column
+		--delay: calc((var(--time) * -1) + (var(--time) / var(--res)) * (var(--col) - 1))
+		align-items: stretch
+		animation: fly 1s var(--delay) ease-in-out alternate infinite
+		display: flex
+		flex: 1 0
+		flex-flow: column nowrap
+		justify-content: stretch	
+
+	&__strip
+		background-color: #fff
+		background-size: cover
+		background-position: calc(100% / var(--res) * var(--col)) 0
+		flex: 1 0
+
+.flag__strip
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDk2MDAgNDgwMCI+Cgk8dGl0bGU+RmxhZyBvZiBDYW5hZGE8L3RpdGxlPgoJPHBhdGggZmlsbD0iI2YwMCIgZD0ibTAgMGgyNDAwbDk5IDk5aDQ2MDJsOTktOTloMjQwMHY0ODAwaC0yNDAwbC05OS05OWgtNDYwMmwtOTkgOTlIMHoiLz4KCTxwYXRoIGZpbGw9IiNmZmYiIGQ9Im0yNDAwIDBoNDgwMHY0ODAwaC00ODAwem0yNDkwIDQ0MzAtNDUtODYzYTk1IDk1IDAgMCAxIDExMS05OGw4NTkgMTUxLTExNi0zMjBhNjUgNjUgMCAwIDEgMjAtNzNsOTQxLTc2Mi0yMTItOTlhNjUgNjUgMCAwIDEtMzQtNzlsMTg2LTU3Mi01NDIgMTE1YTY1IDY1IDAgMCAxLTczLTM4bC0xMDUtMjQ3LTQyMyA0NTRhNjUgNjUgMCAwIDEtMTExLTU3bDIwNC0xMDUyLTMyNyAxODlhNjUgNjUgMCAwIDEtOTEtMjdsLTMzMi02NTItMzMyIDY1MmE2NSA2NSAwIDAgMS05MSAyN2wtMzI3LTE4OSAyMDQgMTA1MmE2NSA2NSAwIDAgMS0xMTEgNTdsLTQyMy00NTQtMTA1IDI0N2E2NSA2NSAwIDAgMS03MyAzOGwtNTQyLTExNSAxODYgNTcyYTY1IDY1IDAgMCAxLTM0IDc5bC0yMTIgOTkgOTQxIDc2MmE2NSA2NSAwIDAgMSAyMCA3M2wtMTE2IDMyMCA4NTktMTUxYTk1IDk1IDAgMCAxIDExMSA5OGwtNDUgODYzeiIvPgo8L3N2Zz4K)
+
