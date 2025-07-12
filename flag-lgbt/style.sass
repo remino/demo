@@ -1,24 +1,43 @@
 ---
 ---
+@import url(https://unpkg.com/@remino/dress.css/dist/dress.css)
+
 @keyframes fly
 	from
 		transform: translateY(-2.5%)
 	to
 		transform: translateY(2.5%)
 
-body
-	align-items: center
-	background: #111
-	box-sizing: border-box
-	display: flex
-	flex-flow: row nowrap
-	justify-content: center
+\:root
+	--dress-bg: #111
+	--dress-mw: 100%
 
-body, html
+body,
+html
 	margin: 0
 	padding: 0
 	height: 100%
 	width: 100%
+
+body
+	align-items: center
+	box-sizing: border-box
+	display: flex
+	flex-flow: column nowrap
+	justify-content: space-between
+
+figure,
+form
+	margin: 0
+
+figure
+	align-content: center
+	flex-grow: 1
+	padding: 0
+
+footer
+	nav ul
+		justify-content: center
 
 .flag
 	--width: 75vmin
@@ -41,17 +60,101 @@ body, html
 
 	&__strip
 		flex: 1 0
+		transition: 0.6s ease-in-out
+		transition-property: background-color flex-grow
+		transform: translateZ(0)
 
-		&:nth-child(1)
-			background: #E50000
+		&:nth-child(1),
+		&:nth-child(7)
+			flex: 0 0
 		&:nth-child(2)
-			background: #FF8D00
+			background: #E50000
 		&:nth-child(3)
-			background: #FFEE00
+			background: #FF8D00
 		&:nth-child(4)
-			background: #028121
+			background: #FFEE00
 		&:nth-child(5)
-			background: #004CFF
+			background: #028121
 		&:nth-child(6)
+			background: #004CFF
+		&:nth-child(8)
 			background: #770088
 
+body
+	&:has(#lesbian5:target)
+		.flag__strip
+			flex: 1 0
+
+			&:nth-child(2),
+			&:nth-child(4),
+			&:nth-child(7)
+				flex: 0 0
+			&:nth-child(1)
+				background: #D52D00
+			&:nth-child(3)
+				background: #ff9a56
+			&:nth-child(5)
+				background: #FFFFFF
+			&:nth-child(6)
+				background: #D362A4
+			&:nth-child(8)
+				background: #a30262
+
+	&:has(#lesbian7:target)
+		.flag__strip
+			flex: 1 0
+
+			&:nth-child(1)
+				background: #d52d00
+			&:nth-child(2)
+				background: #ef7627
+			&:nth-child(3)
+				background: #ff9a56
+			&:nth-child(4)
+				flex: 0 0
+			&:nth-child(5)
+				background: #FFFFFF
+			&:nth-child(6)
+				background: #d162a4
+			&:nth-child(7)
+				background: #b55690
+			&:nth-child(8)
+				background: #a30262
+
+	&:has(#lgbt8:target)
+		.flag__strip
+			flex: 1 0
+
+			&:nth-child(1)
+				background: #FF69B4
+			&:nth-child(2)
+				background: #FF0000
+			&:nth-child(3)
+				background: #FF8E00
+			&:nth-child(4)
+				background: #FFFF00
+			&:nth-child(5)
+				background: #008E00
+			&:nth-child(6)
+				background: #00C0C0
+			&:nth-child(7)
+				background: #400098
+			&:nth-child(8)
+				background: #8E008E
+
+	&:has(#trans:target)
+		.flag__strip
+			flex: 1 0
+
+			&:nth-child(2),
+			&:nth-child(4),
+			&:nth-child(7)
+				flex: 0 0
+			&:nth-child(1),
+			&:nth-child(8)
+				background: #5BCEFA
+			&:nth-child(3),
+			&:nth-child(6)
+				background: #F5A9B8
+			&:nth-child(5)
+				background: #fff

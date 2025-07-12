@@ -4,12 +4,26 @@ title: 🏳️‍🌈 LGBT Flag
 
 <!-- prettier-ignore -->
 {% assign res = 256 %}
-<div class="flag" style="--res: {{ res }}; --time: 2s;">
-	{% for col in (1..res) %}
-	<div class="flag__column" style="--col: {{ col }}">
-		{% for row in (1..6) %}
-		<div class="flag__strip"></div>
+<figure>
+	<div class="flag" style="--res: {{ res }}; --time: 2s;">
+		{% for col in (1..res) %}
+		<div class="flag__column" style="--col: {{ col }}">
+			{% for row in (1..8) %}
+			<div class="flag__strip"></div>
+			{% endfor %}
+		</div>
 		{% endfor %}
 	</div>
-	{% endfor %}
-</div>
+</figure>
+
+<footer>
+	<nav>
+		<ul>
+			<li id="lgbt6"><a href="#lgbt6">6-stripe Rainbow</a></li>
+			<li id="lgbt8"><a href="#lgbt8">8-stripe Rainbow</a></li>
+			<li id="trans"><a href="#trans">Trans</a></li>
+			<li id="lesbian5"><a href="#lesbian5">5-stripe Lesbian Sunset</a></li>
+			<li id="lesbian7"><a href="#lesbian7">7-stripe Lesbian Sunset</a></li>
+		</ul>
+	</nav>
+</footer>
