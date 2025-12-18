@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -13,15 +13,25 @@
 			defer
 			src="{{ page.url | relative_url | append: 'script.js' }}"
 		></script>
+		<link rel="stylesheet" href="https://remino.net/demokit/demokit.css" />
 	</head>
 	<body>
 		{{ content }}
-		<nav id="remino-demo-nav">
-			<a
-				href="{{ site.github.repository_url }}/tree/main/{{ page.url | relative_url | split: '/' | shift | shift | join: '/' }}"
-				target="_blank"
-				>See code on GitHub</a
-			>
-		</nav>
+		<remino-ribbon pushbody position="bottom" border="top" bg="blur" autohide>
+			<ul>
+				<li><a href="./">{{page.title}}</a></li>
+				<li>
+					<a
+						href="{{ site.github.repository_url }}/tree/main/{{ page.url | relative_url | split: '/' | shift | shift | join: '/' }}"
+						target="_blank"
+						>Source</a
+					>
+				</li>
+				<li>
+					<a href="../">Other Demos</a>
+				</li>
+			</ul>
+		</remino-ribbon>
+		<script src="https://remino.net/demokit/demokit.js"></script>
 	</body>
 </html>
