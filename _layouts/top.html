@@ -1,12 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<title>{{ page.title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="{{ '/style.css' | relative_url }}" />
+		<script src="https://remino.net/demokit/demokit.js"></script>
 	</head>
 	<body>
 		<main>{{ content }}</main>
+		<remino-ribbon
+			doctitle
+			pushbody
+			position="bottom"
+			border="top"
+		></remino-ribbon>
 	</body>
 </html>
